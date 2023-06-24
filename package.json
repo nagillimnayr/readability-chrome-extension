@@ -7,8 +7,7 @@
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-import": "^2.27.5",
-    "prettier": "^2.8.8",
-    "vite": "^4.3.9"
+    "prettier": "^2.8.8"
   },
   "dependencies": {
     "@commitlint/cz-commitlint": "^17.5.0",
