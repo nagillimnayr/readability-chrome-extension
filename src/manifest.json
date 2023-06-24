@@ -28,10 +28,14 @@
     }
   },
 
+  "side_panel": {
+    "default_path": "sidepanel/sidepanel.html"
+  },
+
   "web_accessible_resources": [
     {
       "matches": ["<all_urls>"],
-      "resources": ["scripts/*", "content/*"]
+      "resources": ["scripts/*", "content/*", "sidepanel/*"]
     }
   ]
 }
