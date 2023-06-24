@@ -20,6 +20,11 @@
     "type": "module"
   },
   "commands": {
+    "run_script": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+L"
+      }
+    },
     "_execute_action": {
       "suggested_key": {
         "default": "Ctrl+B",
