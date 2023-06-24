@@ -2,15 +2,12 @@
   "devDependencies": {
     "@commitlint/cli": "^17.6.5",
     "@commitlint/config-conventional": "^17.6.5",
-    "@parcel/config-webextension": "^2.9.2",
     "commitizen": "^4.3.0",
     "eslint": "^8.43.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-import": "^2.27.5",
-    "parcel": "^2.9.2",
-    "prettier": "^2.8.8",
-    "rimraf": "^5.0.1"
+    "prettier": "^2.8.8"
   },
   "dependencies": {
     "@commitlint/cz-commitlint": "^17.5.0",
@@ -26,6 +23,7 @@
   "scripts": {
     "commit": "git-cz",
     "cz": "git-cz",
-    "dev": "npx vite"
+    "start": "parcel watch src/manifest.json --host localhost --config @parcel/config-webextension",
+    "build": "rimraf dist && parcel build src/manifest.json --config @parcel/config-webextension"
   }
 }
