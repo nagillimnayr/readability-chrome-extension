@@ -7,3 +7,7 @@ chrome.action.onClicked.addListener(async (tab) => {
     files: ['scripts/script.js'],
   });
 });
+
+chrome.sidePanel
+  .setPanelBehavior({ openPanelOnActionClick: true })
+  .catch((error) => console.error(error));
