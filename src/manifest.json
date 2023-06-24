@@ -13,7 +13,7 @@
   "action": {
     "default_title": "Fetch Test!"
   },
-  "permissions": ["activeTab", "scripting"],
+  "permissions": ["activeTab", "scripting", "sidePanel"],
 
   "background": {
     "service_worker": "background.js",
