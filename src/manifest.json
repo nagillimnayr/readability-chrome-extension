@@ -11,7 +11,7 @@
   ],
 
   "action": {
-    "default_title": "Fetch Test!"
+    "default_title": "Readability!"
   },
   "permissions": ["activeTab", "scripting", "sidePanel"],
 
