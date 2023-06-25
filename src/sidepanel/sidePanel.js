@@ -17,8 +17,10 @@ async function explain(text) {
   })
     .then((res) => res.json())
     .then((data) => {
-      document.body.querySelector('#explanationText').textContent =
-        data.completion.content;
+      const explanationText = document.querySelector('#explanationText');
+      const spinner = document.querySelector('#spinner');
+      spinner.remove();
+      explanationText.textContent = data.completion.content;
     })
     .catch((error) => console.error('Error! promise failed: ', error));
 }
@@ -37,7 +39,9 @@ chrome.runtime.onMessage?.addListener(({ name, data }) => {
 
   // display loading spinner
   const spinner = loadingSpinner();
-  document.body.querySelector('#explanationText').appendChild(spinner);
+  const explanationText = document.querySelector('#explanationText');
+  explanationText.textContent = '';
+  explanationText.appendChild(spinner);
 
   // make API call
   explain(data.value);
