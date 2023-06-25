@@ -4,7 +4,6 @@
     "@commitlint/config-conventional": "^17.6.5",
     "@parcel/config-webextension": "^2.9.2",
     "@tailwindcss/typography": "^0.5.9",
-    "autoprefixer": "^10.4.14",
     "commitizen": "^4.3.0",
     "eslint": "^8.43.0",
     "eslint-config-airbnb": "^19.0.4",
