@@ -34,23 +34,18 @@ chrome.runtime.onMessage?.addListener(({ name, data }) => {
   explain(data.value);
 });
 
-// function handleClick() {
-//   console.log('explain button clicked!');
-//   const selectionParagraphElement =
-//     document.body.querySelector('#selectedText');
-//   const selectedText = selectionParagraphElement.textContent;
-//   if (selectedText === '') {
-//     console.log('text is null');
-//     return;
-//   }
+function handleClick() {
+  console.log('explain button clicked!');
+  const selectionParagraphElement =
+    document.body.querySelector('#selectedText');
+  const selectedText = selectionParagraphElement.textContent;
+  if (selectedText === '') {
+    console.log('text is null');
+    return;
+  }
 
-//   document.body.querySelector('#explanationText').textContent = 'Loading...';
-//   // explain(selectedText).then((result) => {
-//   //   document.body.querySelector('#explanationText').textContent = result.data;
-//   // });
+  explain(selectedText);
+}
 
-//   explain(selectedText);
-// }
-
-// // add event listener to button
-// document.querySelector('#explain-btn').addEventListener('click', handleClick);
+// add event listener to button
+document.querySelector('#explain-btn').addEventListener('click', handleClick);
