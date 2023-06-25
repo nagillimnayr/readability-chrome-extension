@@ -3,15 +3,18 @@
     "@commitlint/cli": "^17.6.5",
     "@commitlint/config-conventional": "^17.6.5",
     "@parcel/config-webextension": "^2.9.2",
+    "autoprefixer": "^10.4.14",
     "commitizen": "^4.3.0",
     "eslint": "^8.43.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-import": "^2.27.5",
     "parcel": "^2.9.2",
+    "postcss": "^8.4.24",
     "prettier": "^2.8.8",
     "process": "^0.11.10",
-    "rimraf": "^5.0.1"
+    "rimraf": "^5.0.1",
+    "tailwindcss": "^3.3.2"
   },
   "dependencies": {
     "@commitlint/cz-commitlint": "^17.5.0",
