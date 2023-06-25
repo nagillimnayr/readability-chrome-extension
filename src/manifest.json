@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Readability",
+  "name": "ReadAbility",
   "version": "0.0.1",
 
   "content_scripts": [
@@ -11,7 +11,7 @@
   ],
 
   "action": {
-    "default_title": "Readability!"
+    "default_title": "ReadAbility!"
   },
   "permissions": ["activeTab", "scripting", "sidePanel", "contextMenus"],
 
@@ -23,7 +23,8 @@
     "run_script": {
       "suggested_key": {
         "default": "Ctrl+Shift+L"
-      }
+      },
+      "description": "Activate ReadAbility"
     },
     "_execute_action": {
       "suggested_key": {
