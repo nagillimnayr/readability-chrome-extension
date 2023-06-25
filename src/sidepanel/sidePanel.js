@@ -4,6 +4,7 @@
 async function explain(text) {
   // wrap text in quotations
   const message = `"${text}"`;
+
   // send text to API
   fetch('http://localhost:3000', {
     method: 'POST',
@@ -22,30 +23,22 @@ async function explain(text) {
     .catch((error) => console.error('Error! promise failed: ', error));
 }
 
+function loadingSpinner() {
+  const spinner = document.createElement('div');
+  spinner.id = 'spinner';
+  spinner.classList.add(['loader']);
+  return spinner;
+}
+
 chrome.runtime.onMessage?.addListener(({ name, data }) => {
   if (name !== 'readability-context') return;
   const selectionParagraphElement = document.querySelector('#selectedText');
   selectionParagraphElement.textContent = data.value;
 
-  // display loading message
-  document.body.querySelector('#explanationText').textContent = 'Loading...';
+  // display loading spinner
+  const spinner = loadingSpinner();
+  document.body.querySelector('#explanationText').appendChild(spinner);
 
   // make API call
   explain(data.value);
 });
-
-function handleClick() {
-  console.log('explain button clicked!');
-  const selectionParagraphElement =
-    document.body.querySelector('#selectedText');
-  const selectedText = selectionParagraphElement.textContent;
-  if (selectedText === '') {
-    console.log('text is null');
-    return;
-  }
-
-  explain(selectedText);
-}
-
-// add event listener to button
-document.querySelector('#explain-btn').addEventListener('click', handleClick);

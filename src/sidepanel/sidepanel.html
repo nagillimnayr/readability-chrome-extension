@@ -1,23 +1,36 @@
 <html>
   <head>
     <link href="./sidePanel.css" rel="stylesheet" />
+    <link href="../styles/styles.css" rel="stylesheet" />
     <title>ReadAbility</title>
     <script defer src="./sidePanel.js"></script>
   </head>
   <body>
     <div
       id="sidePanel"
-      class="prose prose-h1:prose-2xl prose-p:prose-base prose-h3:prose-lg prose-p:border-2 prose-p:border-black"
+      class="prose prose-h1:prose-2xl prose-p:prose-base prose-h3:font-semibold prose-p:min-h-fit prose-p:h-36 prose-h3:prose-lg prose-p:border-2 prose-p:border-black"
     >
-      <h1 class="">ReadAbility</h1>
-      <div class="border-b-2 border-black w-full h-0"></div>
+      <header class="border-b-2 border-black w-full h-fit pt-1 mx-0 mb-1">
+        <h1 class="font-bold mx-3 mb-0 py-0">ReadAbility</h1>
+      </header>
 
-      <h3 class="">Selected Text:</h3>
-      <p id="selectedText" class="prose prose-base"></p>
-      <button id="explain-btn">Explain</button>
-
-      <h3>Explanation:</h3>
-      <p id="explanationText" class=""></p>
+      <div class="mx-3">
+        <section>
+          <header>
+            <h3 class="mb-0">Selected Text:</h3>
+          </header>
+          <p id="selectedText" class="min-h-fit overflow-y-scroll p-1"></p>
+        </section>
+        <section>
+          <header>
+            <h3 class="mb-0">Explanation:</h3>
+          </header>
+          <p
+            id="explanationText"
+            class="min-h-fit overflow-y-scroll p-1 relative"
+          ></p>
+        </section>
+      </div>
     </div>
   </body>
 </html>
