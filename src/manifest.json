@@ -34,13 +34,13 @@
   },
 
   "side_panel": {
-    "default_path": "sidepanel/sidepanel.html"
+    "default_path": "sidePanel/sidePanel.html"
   },
 
   "web_accessible_resources": [
     {
       "matches": ["<all_urls>"],
-      "resources": ["scripts/*", "content/*", "sidepanel/*"]
+      "resources": ["scripts/*", "content/*", "sidePanel/*"]
     }
   ]
 }
