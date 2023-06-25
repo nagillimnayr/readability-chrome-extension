@@ -3,6 +3,12 @@
   "name": "ReadAbility",
   "version": "0.0.1",
 
+  "icons": {
+    "16": "images/icon-16.png",
+    "48": "images/icon-48.png",
+    "128": "images/icon-128.png"
+  },
+
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
@@ -41,7 +47,7 @@
   "web_accessible_resources": [
     {
       "matches": ["<all_urls>"],
-      "resources": ["scripts/*", "content/*", "sidePanel/*"]
+      "resources": ["scripts/*", "content/*", "sidePanel/*", "images/*"]
     }
   ]
 }
