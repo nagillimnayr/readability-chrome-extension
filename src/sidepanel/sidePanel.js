@@ -3,7 +3,7 @@
 // const { default: explain } = await import('../scripts/explain.js');
 async function explain(text) {
   // send text to API
-  const responseText = await fetch('http://localhost:3000', {
+  fetch('http://localhost:3000', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -14,10 +14,10 @@ async function explain(text) {
   })
     .then((res) => res.json())
     .then((data) => {
-      return data.completion.content;
-    });
-
-  return responseText;
+      document.body.querySelector('#explanationText').textContent =
+        data.completion.content;
+    })
+    .catch((error) => console.error('Error! promise failed: ', error));
 }
 
 chrome.runtime.onMessage?.addListener(({ name, data }) => {
@@ -27,20 +27,21 @@ chrome.runtime.onMessage?.addListener(({ name, data }) => {
 });
 
 function handleClick() {
+  console.log('explain button clicked!');
   const selectionParagraphElement =
     document.body.querySelector('#selectedText');
   const selectedText = selectionParagraphElement.textContent;
-  if (selectedText === '') return;
+  if (selectedText === '') {
+    console.log('text is null');
+    return;
+  }
 
+  document.body.querySelector('#explanationText').textContent = 'Loading...';
   // explain(selectedText).then((result) => {
   //   document.body.querySelector('#explanationText').textContent = result.data;
   // });
 
-  explain(selectedText)
-    .then((result) => {
-      document.body.querySelector('#explanationText').textContent = result.data;
-    })
-    .catch((error) => console.error('promise failed: ', error));
+  explain(selectedText);
 }
 
 // add event listener to button
