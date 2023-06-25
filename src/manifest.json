@@ -10,15 +10,15 @@
     }
   ],
 
+  "background": {
+    "service_worker": "service-worker.js",
+    "type": "module"
+  },
   "action": {
     "default_title": "ReadAbility!"
   },
   "permissions": ["activeTab", "scripting", "sidePanel", "contextMenus"],
 
-  "background": {
-    "service_worker": "service-worker.js",
-    "type": "module"
-  },
   "commands": {
     "run_script": {
       "suggested_key": {
