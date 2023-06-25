@@ -13,7 +13,7 @@
   "action": {
     "default_title": "Readability!"
   },
-  "permissions": ["activeTab", "scripting", "sidePanel"],
+  "permissions": ["activeTab", "scripting", "sidePanel", "contextMenus"],
 
   "background": {
     "service_worker": "service-worker.js",
