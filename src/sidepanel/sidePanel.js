@@ -1,9 +1,28 @@
-import { explain } from '../scripts/explain';
+// import { explain } from '../scripts/explain';
 
-chrome.runtime.onMessage.addListener(({ name, data }) => {
+// const { default: explain } = await import('../scripts/explain.js');
+async function explain(text) {
+  // send text to API
+  const responseText = await fetch('http://localhost:3000', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      message: text,
+    }),
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      return data.completion.content;
+    });
+
+  return responseText;
+}
+
+chrome.runtime.onMessage?.addListener(({ name, data }) => {
   if (name !== 'readability-context') return;
-  const sidePanel = document.body.querySelector('#sidePanel');
-  const selectionParagraphElement = sidePanel.querySelector('#selectedText');
+  const selectionParagraphElement = document.querySelector('#selectedText');
   selectionParagraphElement.textContent = data.value;
 });
 
@@ -13,12 +32,16 @@ function handleClick() {
   const selectedText = selectionParagraphElement.textContent;
   if (selectedText === '') return;
 
-  explain(selectedText).then((result) => {
-    document.body.querySelector('#explanationText').textContent = result.data;
-  });
+  // explain(selectedText).then((result) => {
+  //   document.body.querySelector('#explanationText').textContent = result.data;
+  // });
+
+  explain(selectedText)
+    .then((result) => {
+      document.body.querySelector('#explanationText').textContent = result.data;
+    })
+    .catch((error) => console.error('promise failed: ', error));
 }
 
 // add event listener to button
-document.body
-  .querySelector('#explain-btn')
-  .addEventListener('click', handleClick);
+document.querySelector('#explain-btn').addEventListener('click', handleClick);
