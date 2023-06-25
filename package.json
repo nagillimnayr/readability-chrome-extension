@@ -27,7 +27,7 @@
   "scripts": {
     "commit": "git-cz",
     "cz": "git-cz",
-    "start": "parcel watch src/manifest.json --host localhost --config @parcel/config-webextension",
-    "build": "rimraf dist && parcel build src/manifest.json --config @parcel/config-webextension"
+    "start": "parcel watch src/manifest.json --host localhost --no-cache --config @parcel/config-webextension",
+    "build": "rimraf dist && parcel build src/manifest.json --no-cache --config @parcel/config-webextension"
   }
 }
